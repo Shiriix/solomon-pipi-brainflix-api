@@ -7,7 +7,7 @@ const getAllVideos = (req, res) => {
 };
 
 const getSelectedVideo = (req, res) => {
-  const videoId = req.params.id;
+  const videoId = req.params.videoId;
   const videoArr = readVideo();
 
   const selectedVideo = videoArr.find((video) => {
@@ -21,7 +21,14 @@ const postNewVideo = (req, res) => {
   const newVideo = {
     id: uuid.v4(),
     title: req.body.title,
+    channel: "",
+    image: "",
     description: req.body.description,
+    views: "1337",
+    likes: "69",
+    duration: "2:25",
+    video: "",
+    timestamp: 1691644662000,
   };
   writeVideo(newVideo);
   res.status(200).send(newVideo);
