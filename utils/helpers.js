@@ -14,7 +14,7 @@ const writeVideo = (video) => {
   const videoArr = readVideo();
   videoArr.push(video);
   try {
-    fs.writeFileSync("./data/video-details.json", JSON.stringify(VideoArr));
+    fs.writeFileSync("./data/video-details.json", JSON.stringify(videoArr));
   } catch (error) {
     console.log(error);
   }

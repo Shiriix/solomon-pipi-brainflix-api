@@ -21,8 +21,8 @@ const postNewVideo = (req, res) => {
   const newVideo = {
     id: uuid.v4(),
     title: req.body.title,
-    channel: "",
-    image: "",
+    channel: "Amari Middleton",
+    image: "http://localhost:5051/images/osamason.png",
     description: req.body.description,
     views: "1337",
     likes: "69",
