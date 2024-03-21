@@ -3,7 +3,13 @@ const { readVideo, writeVideo } = require("../utils/helpers");
 
 const getAllVideos = (req, res) => {
   const videos = readVideo();
-  res.status(200).send(videos);
+  const filteredVideos = videos.map((video) => ({
+    id: video.id,
+    title: video.title,
+    channel: video.channel,
+    image: video.image,
+  }));
+  res.status(200).send(filteredVideos);
 };
 
 const getSelectedVideo = (req, res) => {
